@@ -1,0 +1,159 @@
+/* 常用工具类 */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: $text-primary; }
+.text-regular { color: $text-regular; }
+.text-secondary { color: $text-secondary; }
+.text-placeholder { color: $text-placeholder; }
+
+.text-success { color: $success-color; }
+.text-warning { color: $warning-color; }
+.text-danger { color: $danger-color; }
+.text-info { color: $info-color; }
+
+.bg-primary { background-color: $primary-color; }
+.bg-success { background-color: $success-color; }
+.bg-warning { background-color: $warning-color; }
+.bg-danger { background-color: $danger-color; }
+.bg-info { background-color: $info-color; }
+
+.font-bold { font-weight: bold; }
+.font-light { font-weight: 300; }
+
+.mt-0 { margin-top: 0; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mb-0 { margin-bottom: 0; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+
+.pt-0 { padding-top: 0; }
+.pt-10 { padding-top: 10px; }
+.pt-20 { padding-top: 20px; }
+.pb-0 { padding-bottom: 0; }
+.pb-10 { padding-bottom: 10px; }
+.pb-20 { padding-bottom: 20px; }
+
+.flex { display: flex; }
+.flex-1 { flex: 1; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-column { display: flex; flex-direction: column; }
+
+.pointer { cursor: pointer; }
+.hover-pointer:hover { cursor: pointer; }
+
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+.border { border: 1px solid $border-base; }
+.border-light { border: 1px solid $border-light; }
+.radius { border-radius: $border-radius-base; }
+.radius-lg { border-radius: 8px; }
+
+.shadow { box-shadow: $box-shadow-base; }
+.shadow-light { box-shadow: $box-shadow-light; }
+
+/* 单行文字省略 */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 多行文字省略 */
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Vue Flow Handle 全局样式覆盖 - 输入蓝色，输出红色 */
+
+/* 基础 Handle 重置 */
+.vue-flow__handle {
+  width: 12px !important;
+  height: 12px !important;
+  border: 2px solid #fff !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+}
+
+.vue-flow__handle:hover {
+  transform: scale(1.2);
+}
+
+/* 左侧输入 Handle - 蓝色 */
+.vue-flow__handle-left,
+.vue-flow__handle[style*="left"],
+.vue-flow [id$="-target"].vue-flow__handle {
+  left: -6px !important;
+  background: #409EFF !important;
+}
+
+.vue-flow__handle-left:hover {
+  background: #66b1ff !important;
+}
+
+/* 右侧输出 Handle - 红色 */
+.vue-flow__handle-right,
+.vue-flow__handle[style*="right"],
+.vue-flow [id$="-source"].vue-flow__handle {
+  right: -6px !important;
+  background: #f56c6c !important;
+}
+
+.vue-flow__handle-right:hover {
+  background: #f78989 !important;
+}
+
+/* 强制覆盖所有 Handle 的背景颜色 */
+.vue-flow .vue-flow__node .vue-flow__handle-left {
+  background: #409EFF !important;
+}
+
+.vue-flow .vue-flow__node .vue-flow__handle-right {
+  background: #f56c6c !important;
+}
+
+/* Handle ID 选择器覆盖 */
+.vue-flow__handle#target,
+.vue-flow__handle[id="target"] {
+  background: #409EFF !important;
+}
+
+.vue-flow__handle#source,
+.vue-flow__handle[id="source"] {
+  background: #f56c6c !important;
+}
+
+.vue-flow__handle#success {
+  background: #67c23a !important;
+}
+
+.vue-flow__handle#failed {
+  background: #f56c6c !important;
+}
+
+/* 循环节点内部 Handle */
+.vue-flow__handle#loop-start {
+  background: #67c23a !important;
+  box-shadow: 0 0 8px rgba(103, 194, 58, 0.6) !important;
+}
+
+.vue-flow__handle#loop-end {
+  background: #e6a23c !important;
+  box-shadow: 0 0 8px rgba(230, 162, 60, 0.6) !important;
+}
