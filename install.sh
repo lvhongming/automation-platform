@@ -172,7 +172,7 @@ setup_venv() {
 setup_frontend() {
     echo "  安装前端依赖..."
     cd "$(dirname "$0")"
-    cd frontend
+    cd ../frontend
     npm install
 }
 
